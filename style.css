@@ -1,0 +1,13 @@
+.container {
+    width: 960px;
+}
+
+
+.cell {
+    border: 1px solid gray;
+    min-width: 10px;
+    min-height: 10px;
+    display: inline-block;
+}
+
+
