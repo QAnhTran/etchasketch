@@ -1,13 +1,32 @@
+/* adjust various options of the container of the cells */
 .container {
-    width: 960px;
+    width: 480px;
+    height: 720px;
+    background-color: brown;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1px,2fr));
+    grid-template-rows: repeat(auto-fit, minmax(1px,2fr)); 
+    
 }
 
+.decorate {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
-.cell {
+/* cell elements - controls properties for each cell */
+.row {
+    background-color: blue;
+    display: grid;
+}
+
+.container .row .cell {
     border: 1px solid gray;
-    min-width: 10px;
-    min-height: 10px;
-    display: inline-block;
+    min-width: 1px;
+    min-height: 1px;
+
+
 }
 
 

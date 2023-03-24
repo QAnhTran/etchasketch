@@ -1,12 +1,13 @@
 const container = document.querySelector(".container");
-const button = document.querySelector(".newgrid");
+const button1 = document.querySelector(".newgrid");
+const button2 = document.querySelector(".setrgb");
 let rows = document.getElementsByClassName("row");
 let cells = document.getElementsByClassName("cell");
 
 let noOfRows = 16;
 let noOfColumns = 16;
 
-button.addEventListener("click", function() {
+button1.addEventListener("click", function() {
     noOfRows = prompt("Enter number of rows");
     noOfColumns = prompt("Enter number of columns");
     parseInt(noOfRows);
@@ -52,4 +53,20 @@ for (i = 0; i < rows.length; i++) {
 }; //for each row, create 16 cells
 }
 
+button2.addEventListener("click", function () {
+    let grid = document.querySelectorAll(".cell");
+    grid.forEach( function (node) {
+        node.style.cssText = "background-color: #" + randomColor;;
+    }); 
+/*for (i = 0; i < rows.length; i++) {
+    for (j = 0; j < columnCount; j++) {
+        cells.onmouseover = function () {
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            cells.style.cssText = "background-color: #" + randomColor;
+        } 
+    }
+}*/
+});
+
+makeGrid(16,16);
 
