@@ -1,13 +1,15 @@
 const container = document.querySelector(".container");
-const button1 = document.querySelector(".newgrid");
-const button2 = document.querySelector(".setrgb");
+const gridButton = document.querySelector(".newgrid");
+const blackButton = document.querySelector(".setblack");
+const rgbButton = document.querySelector(".setrgb");
+const eraser = document.querySelector(".erase");
 let rows = document.getElementsByClassName("row");
 let cells = document.getElementsByClassName("cell");
 
 let noOfRows = 16;
 let noOfColumns = 16;
 
-button1.addEventListener("click", function() {
+gridButton.addEventListener("click", function() {
     noOfRows = prompt("Enter number of rows");
     noOfColumns = prompt("Enter number of columns");
     parseInt(noOfRows);
@@ -53,19 +55,32 @@ for (i = 0; i < rows.length; i++) {
 }; //for each row, create 16 cells
 }
 
-button2.addEventListener("click", function () {
+blackButton.addEventListener("click",function () {
     let grid = document.querySelectorAll(".cell");
     grid.forEach( function (node) {
-        node.style.cssText = "background-color: #" + randomColor;;
-    }); 
-/*for (i = 0; i < rows.length; i++) {
-    for (j = 0; j < columnCount; j++) {
-        cells.onmouseover = function () {
-            var randomColor = Math.floor(Math.random()*16777215).toString(16);
-            cells.style.cssText = "background-color: #" + randomColor;
+            node.onmouseover = function () {
+            node.style.cssText = "background-color: black";
         } 
-    }
-}*/
+    }); 
+})
+
+rgbButton.addEventListener("click", function () {
+    let grid = document.querySelectorAll(".cell");
+    grid.forEach( function (node) {
+            node.onmouseover = function () {
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            node.style.cssText = "background-color: #" + randomColor;
+        } 
+    }); 
+});
+
+eraser.addEventListener("click", function () {
+    let grid = document.querySelectorAll(".cell");
+    grid.forEach( function (node) {
+            node.onmouseover = function () {
+            node.style.cssText = "background-color: white";
+        } 
+    }); 
 });
 
 makeGrid(16,16);

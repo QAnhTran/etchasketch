@@ -2,7 +2,6 @@
 .container {
     width: 480px;
     height: 720px;
-    background-color: brown;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(1px,2fr));
     grid-template-rows: repeat(auto-fit, minmax(1px,2fr)); 
@@ -17,7 +16,6 @@
 
 /* cell elements - controls properties for each cell */
 .row {
-    background-color: blue;
     display: grid;
 }
 
@@ -26,7 +24,5 @@
     min-width: 1px;
     min-height: 1px;
 
-
 }
-
 
