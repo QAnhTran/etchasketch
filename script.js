@@ -3,6 +3,7 @@ const gridButton = document.querySelector(".newgrid");
 const blackButton = document.querySelector(".setblack");
 const rgbButton = document.querySelector(".setrgb");
 const eraser = document.querySelector(".erase");
+const reset = document.querySelector(".reset");
 let rows = document.getElementsByClassName("row");
 let cells = document.getElementsByClassName("cell");
 
@@ -83,5 +84,11 @@ eraser.addEventListener("click", function () {
     }); 
 });
 
+reset.addEventListener("click", function () {
+    let grid = document.querySelectorAll(".cell");
+    grid.forEach( function (node) {           
+            node.style.cssText = "background-color: none"; 
+    }); 
+});
 makeGrid(16,16);
 
